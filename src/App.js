@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import Modify from './components/modify';
+import Add from './components/add_data';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       
       <Routes>
          <Route path='/' element={<Home/>} />
+         <Route path='/add' element={<Add/>} />
          <Route path='/modify' element={<Modify/>} />
       </Routes>
       

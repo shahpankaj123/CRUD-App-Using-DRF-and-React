@@ -17,8 +17,9 @@ class Navbar extends Component{
         <Link to={'/'} className="nav-link active" aria-current="page">Home</Link>
         </li>
         <li class="nav-item">
-          <Link to={'/modify'} className="nav-link active" aria-current="page">modify</Link>
+          <Link to={'/add'} className="nav-link active" aria-current="page">Add</Link>
         </li>
+       
        
       </ul>
       
