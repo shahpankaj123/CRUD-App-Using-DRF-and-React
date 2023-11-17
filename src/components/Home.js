@@ -1,6 +1,20 @@
+import React,{useEffect, useState} from "react";
+import { getdata } from "./service_api";
+import { Link } from "react-router-dom";
+
 function Home(){
+
+  const [students,setstudents]=useState([])
+
+  useEffect( () => {
+       getdata().then( res => {console.log(res)
+       setstudents(res)   
+     })
+  },[])
+
     return(
         <div className="col-6">
+          
             <table className="table">
   <thead>
     <tr>
@@ -12,16 +26,20 @@ function Home(){
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    {students.map((student) => (
+      <tr key={student.id}>
+      <th scope="row">{student.id}</th>
+      <td>{student.name}</td>
+      <td>{student.roll}</td>
+      <td>{student.address}</td>
       <td>
-      <button type="button" class="btn btn-info">edit</button><span>||</span>
+      <Link to={`/modify/${student.id}`}><button type="button" class="btn btn-info">edit</button></Link><span>||</span>
       <button type="button" class="btn btn-danger">Delete</button>
       </td>
     </tr>
+
+    ))}
+   
     
     
   </tbody>
