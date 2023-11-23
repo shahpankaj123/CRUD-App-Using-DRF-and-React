@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from "react";
-import { getdata } from "./service_api";
+import { getdata} from "./service_api";
 import { Link } from "react-router-dom";
 
 function Home(){
@@ -11,7 +11,7 @@ function Home(){
        setstudents(res)   
      })
   },[])
-
+  
     return(
         <div className="col-6">
           

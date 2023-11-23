@@ -16,3 +16,19 @@ export function getdata_student(id){
         }
     )
 }
+
+export function adddata_student(student){
+
+    return axios.post(`http://127.0.0.1:8000/api/`,
+    {
+        id: null,
+        name: student.name.value,
+        roll: student.roll.value,
+        address: student.address.value,
+
+    }).then(
+        res =>{
+            return res.data
+        }
+    )
+}
