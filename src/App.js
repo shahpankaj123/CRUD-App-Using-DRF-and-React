@@ -9,6 +9,7 @@ import {
 import Home from './components/Home';
 import Modify from './components/modify';
 import Add from './components/add_data';
+import Delete from './components/Delete';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
          <Route path='/' element={<Home/>} />
          <Route path='/add' element={<Add/>} />
          <Route path='/modify/:id' element={<Modify/>} />
+         <Route path='/delete/:id' element={<Delete/>} />
       </Routes>
       
     </div>

@@ -33,8 +33,8 @@ function Home(){
       <td>{student.roll}</td>
       <td>{student.address}</td>
       <td>
-      <Link to={`/modify/${student.id}`}><button type="button" class="btn btn-info">edit</button></Link><span>||</span>
-      <button type="button" class="btn btn-danger">Delete</button>
+      <Link to={`/modify/${student.id}`}><button type="button" className="btn btn-info">edit</button></Link><span>||</span>
+      <Link to={`/delete/${student.id}`}><button type="button" className="btn btn-danger">Delete</button></Link>
       </td>
     </tr>
 

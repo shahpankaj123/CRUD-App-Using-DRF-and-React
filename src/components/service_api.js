@@ -32,3 +32,11 @@ export function adddata_student(student){
         }
     )
 }
+export function deldata_student(id){
+    console.log(id.id);
+    return axios.delete(`http://127.0.0.1:8000/api/`+id.id).then(     
+        res => {
+           return res.data
+        }
+    )
+}
