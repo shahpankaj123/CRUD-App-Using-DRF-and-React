@@ -1,4 +1,4 @@
-import { getdata_student } from "./service_api";
+import { getdata_student,modifydata_student } from "./service_api";
 import React,{useEffect, useState} from "react";
 import {
   useParams
@@ -19,21 +19,31 @@ function Modify(){
        setstudents(res)   
      })
   },[])
+  const modifyformhandle = (e) =>{
+    console.log(e.target)
+    modifydata_student(e.target).then(
+      res =>{
+        console.log(res)
+      }
+    )
+   
+  }
     return(
         <div className="col-6">
-                  <form>
+                  <form onSubmit={modifyformhandle}>
   <div class="mb-1">
-    <label for="exampleInputEmail1" class="form-label">Name of student</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={students.name}/>
+    <input type="hidden" value={students.id} name="id_value"/>
+    <label >Name of student</label>
+    <input type="text" name="name"  defaultValue={students.name}/>
    
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">roll number</label>
-    <input type="number" class="form-control" id="exampleInputPassword1" value={students.roll}/>
+    <label >roll number</label>
+    <input type="number" name="roll"  defaultValue={students.roll}/>
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Address</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" value={students.address}/>
+    <label >Address</label>
+    <input type="text" name="password"  defaultValue={students.address}/>
   </div>
  
   <button type="submit" class="btn btn-primary">Submit</button>

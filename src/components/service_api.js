@@ -40,3 +40,19 @@ export function deldata_student(id){
         }
     )
 }
+
+export function modifydata_student(student){
+    
+
+    return axios.put(`http://127.0.0.1:8000/api/`+student.id_value.value+'/',
+    {
+        name: student.name.value,
+        roll: student.roll.value,
+        address: student.address.value,
+
+    }).then(
+        res =>{
+            return res.data
+        }
+    )
+}
